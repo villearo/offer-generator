@@ -1,0 +1,106 @@
+@media (min-width: 64rem) {
+	.single-offer .entry-header,
+	.single-offer .entry-content,
+	.single-offer .entry-footer {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 54rem;
+	}
+}
+
+.single-offer .entry-header,
+.single-offer .entry-meta {
+	display: none;
+}
+
+.single-offer #content .offer-terms {
+    margin-bottom: 0;
+}
+
+#offer-accept-content:not(.visible) {
+	display: none;
+}
+
+.single-offer .sans {
+	font-size: unset;
+}
+
+@media print {
+	* {
+		-webkit-print-color-adjust: exact;
+	}
+	.color-gray-medium {
+		color: #000 !important;
+	}
+	#menu,
+	#toggle-menu,
+	#toggle-menu,
+	#offer-footer,
+	#footer {
+		display: none;
+	}
+	@page {
+	    margin: 2cm 2cm 3cm 2cm;
+	}
+}
+
+
+
+
+
+
+
+.single-offer .entry-content .one-time-services h4,
+.single-offer .entry-content .recurring-services h4 {
+	background-color: #000;
+	color: #fff;
+	padding: .15rem .5rem .25rem;
+}
+
+.single-offer .total-price,
+.single-offer .recurring-price,
+.single-offer .service-price,
+.single-offer .entry-date {
+	float: right;
+}
+
+.single-offer .info-text {
+	padding: 1.5rem 0;
+}
+
+.single-offer .entry-content button {
+	margin-top: 3rem;
+}
+
+.single-offer .entry-content hr {
+	margin: 0;
+}
+
+.single-offer .one-time-services, .recurring-services, .single-offer .client {
+	margin-bottom: 3rem;
+}
+
+.single-offer .service-description {
+	margin-top: 2rem;
+}
+
+.single-offer .entry-content button:not(:first-of-type) {
+	margin-left: 1rem;
+}
+
+.single-offer .offer-terms div {
+	padding-bottom: .5rem;
+}
+
+.single-offer .entry-content p {
+	margin: 0 0 1rem 0;
+}
+
+
+.single-offer .content {
+	margin-top: 3rem;
+}
+
+.single-offer #content .offer-terms {
+	margin-bottom: 3rem;
+}
