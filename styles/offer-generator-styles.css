@@ -25,24 +25,7 @@
 	font-size: unset;
 }
 
-@media print {
-	* {
-		-webkit-print-color-adjust: exact;
-	}
-	.color-gray-medium {
-		color: #000 !important;
-	}
-	#menu,
-	#toggle-menu,
-	#toggle-menu,
-	#offer-footer,
-	#footer {
-		display: none;
-	}
-	@page {
-	    margin: 2cm 2cm 3cm 2cm;
-	}
-}
+
 
 
 
@@ -64,8 +47,13 @@
 	float: right;
 }
 
+.single-offer .entry-content {
+	margin-top: 1rem;
+}
+
+.single-offer .content,
 .single-offer .info-text {
-	padding: 1.5rem 0;
+	margin-bottom: 1rem;
 }
 
 .single-offer .entry-content button {
@@ -94,11 +82,6 @@
 
 .single-offer .entry-content p {
 	margin: 0 0 1rem 0;
-}
-
-
-.single-offer .content {
-	margin-top: 3rem;
 }
 
 .single-offer #content .offer-terms {

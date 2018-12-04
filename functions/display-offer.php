@@ -31,6 +31,7 @@ function offer_generator_display_offer($post) {
         return '<div class="service-description"><h3>'.get_post($post)->post_title.'</h3>'.wpautop(get_post($post)->post_content).'</div>';
     }
 
+
     echo '<h1>'.get_post_meta($post->ID, 'offer_title', true).'</h1><hr>';
     echo '<span class="client">Asiakas: '.get_the_title().'</span>';
     ?>
@@ -39,19 +40,24 @@ function offer_generator_display_offer($post) {
 
     <div class="entry-content">
         <?php
-        echo '<div class="content">'.get_the_content().'</div>';
+
+        if (get_the_content()) {
+            echo '<div class="content">'.get_the_content().'</div>';
+        }
         echo '<div class="info-text color-gray-medium">'.get_option('offer_generator_text_under_content').'</div>';
         
         // One time services
         echo '<div class="one-time-services">';
         echo '<h4 class="sans">'.__('Non-recurring charges:', 'offer-generator').'</h4>';
-        foreach ($selected_services as $key => $post) {
-            if ( get_post_meta($post, 'is_recurring', true) != 1 ) {
-                echo '<div>';
-                echo '<span class="service-name">'.get_post($post)->post_title.'</span> ';
-                echo '<span class="service-price">'.get_post_meta($post, 'service_price', true).'</span>';
-                echo '</div>';
-                $total_price = $total_price + get_post_meta($post, 'service_price', true);
+        if ($selected_services) {
+            foreach ($selected_services as $key => $post) {
+                if ( get_post_meta($post, 'is_recurring', true) != 1 ) {
+                    echo '<div>';
+                    echo '<span class="service-name">'.get_post($post)->post_title.'</span> ';
+                    echo '<span class="service-price">'.get_post_meta($post, 'service_price', true).'</span>';
+                    echo '</div>';
+                    $total_price = $total_price + get_post_meta($post, 'service_price', true);
+                }
             }
         }
         echo '<hr><strong>'.__('Non-recurring charges total:', 'offer-generator').'</strong> ';
@@ -62,13 +68,15 @@ function offer_generator_display_offer($post) {
         // Continuous services
         echo '<div class="recurring-services">';
         echo '<h4 class="sans">'.__('Recurring charges:', 'offer-generator').'</h4>';
-        foreach ($selected_services as $key => $post) {
-            if ( get_post_meta($post, 'is_recurring', true) == 1 ) {
-                echo '<div>';
-                echo '<span class="service-name">'.get_post($post)->post_title.'</span> ';
-                echo '<span class="service-price">'.get_post_meta($post, 'service_price', true).'</span>';
-                echo '</div>';
-                $recurring_price = $recurring_price + get_post_meta($post, 'service_price', true);
+        if ($selected_services) {
+            foreach ($selected_services as $key => $post) {
+                if ( get_post_meta($post, 'is_recurring', true) == 1 ) {
+                    echo '<div>';
+                    echo '<span class="service-name">'.get_post($post)->post_title.'</span> ';
+                    echo '<span class="service-price">'.get_post_meta($post, 'service_price', true).'</span>';
+                    echo '</div>';
+                    $recurring_price = $recurring_price + get_post_meta($post, 'service_price', true);
+                }
             }
         }
         echo '<hr><strong>'.__('Recurring charges total:', 'offer-generator').'</strong> ';
@@ -94,15 +102,19 @@ function offer_generator_display_offer($post) {
         echo '<div class="service-descriptions">';
         echo '<h2>'.__('Service descriptions', 'offer-generator').'</h2><hr>';
         // Non-recurring services descriptions
-        foreach ($selected_services as $key => $post) {
-            if ( get_post_meta($post, 'is_recurring', true) != 1 ) {
-                echo service_description($post);
+        if ($selected_services) {
+            foreach ($selected_services as $key => $post) {
+                if ( get_post_meta($post, 'is_recurring', true) != 1 ) {
+                    echo service_description($post);
+                }
             }
         }
         // Recurring services descriptions
-        foreach ($selected_services as $key => $post) {
-            if ( get_post_meta($post, 'is_recurring', true) == 1 ) {
-                echo service_description($post);
+        if ($selected_services) {
+            foreach ($selected_services as $key => $post) {
+                if ( get_post_meta($post, 'is_recurring', true) == 1 ) {
+                    echo service_description($post);
+                }
             }
         }
         ?>
