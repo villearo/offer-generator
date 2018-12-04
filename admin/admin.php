@@ -46,19 +46,19 @@ function display_offer_generator_fields() {
 
     add_settings_section("offer-generator-section", "", null, "offer-generator");
 
-    add_settings_field("offer_generator_text_under_content", "Text under content", "display_offer_generator_text_under_content_element", "offer-generator", "offer-generator-section");
+    add_settings_field("offer_generator_text_under_content", __('Text under content', 'offer-generator'), "display_offer_generator_text_under_content_element", "offer-generator", "offer-generator-section");
     register_setting("offer-generator-section", "offer_generator_text_under_content");
 
-    add_settings_field("offer_generator_delivery_method", "Delivery method", "display_offer_generator_delivery_method_element", "offer-generator", "offer-generator-section");
+    add_settings_field("offer_generator_delivery_method", __('Delivery method', 'offer-generator'), "display_offer_generator_delivery_method_element", "offer-generator", "offer-generator-section");
     register_setting("offer-generator-section", "offer_generator_delivery_method");
 
-    add_settings_field("offer_generator_payment_terms", "Payment Terms", "display_offer_generator_payment_terms_element", "offer-generator", "offer-generator-section");
+    add_settings_field("offer_generator_payment_terms", __('Payment Terms', 'offer-generator'), "display_offer_generator_payment_terms_element", "offer-generator", "offer-generator-section");
     register_setting("offer-generator-section", "offer_generator_payment_terms");
 
-    add_settings_field("offer_generator_other_terms", "Other Terms", "display_offer_generator_other_terms_element", "offer-generator", "offer-generator-section");
+    add_settings_field("offer_generator_other_terms", __('Other Terms', 'offer-generator'), "display_offer_generator_other_terms_element", "offer-generator", "offer-generator-section");
     register_setting("offer-generator-section", "offer_generator_other_terms");
 
-    add_settings_field("offer_generator_accept_offer_content", "Content to show when Accept Offer clicked", "display_offer_generator_accept_offer_content_element", "offer-generator", "offer-generator-section");
+    add_settings_field("offer_generator_accept_offer_content", __('Content to show when Accept Offer clicked', 'offer-generator'), "display_offer_generator_accept_offer_content_element", "offer-generator", "offer-generator-section");
     register_setting("offer-generator-section", "offer_generator_accept_offer_content");
 
     //add_settings_field("offer_generator_visibility", "Show share icons on", "display_offer_generator_options_element", "offer-generator", "offer-generator-section");
