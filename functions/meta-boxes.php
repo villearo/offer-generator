@@ -24,7 +24,7 @@ add_action( 'add_meta_boxes', 'offer_generator_add_meta_boxes' );
 function offer_generator_offer_meta_box_callback( $post ) {
     wp_nonce_field( 'offer_generator_nonce_action', 'offer_generator_nonce' );
     $post_id = $post->ID;
-    $offer_title = isset( get_post_custom($post_id)['offer_title'] ) ? esc_attr( get_post_custom($post_id)['offer_title'][0] ) : "Tarjous verkkosivuston sunnittelusta, toteutuksesta ja ylläpidosta";
+    $offer_title = isset( get_post_custom($post_id)['offer_title'] ) ? esc_attr( get_post_custom($post_id)['offer_title'][0] ) : __('Tarjous verkkosivuston suunnittelusta, toteutuksesta ja ylläpidosta', 'offer-generator');
     $selected_services = isset( get_post_custom($post_id)['selected_services'] ) ? maybe_unserialize(get_post_custom($post_id)['selected_services'][0]) : array();
 
     echo '<label>' . __('Offer Title', 'offer-generator') . '</label><br/><input type="text" name="offer_title" id="offer_title" size="100" value="'. $offer_title .'" /><br/><br/>';
