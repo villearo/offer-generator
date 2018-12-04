@@ -38,7 +38,6 @@ include( OFFER_GENERATOR_PLUGIN_PATH . 'functions/deactivation.php' );
 include( OFFER_GENERATOR_PLUGIN_PATH . 'admin/admin.php' );
 include( OFFER_GENERATOR_PLUGIN_PATH . 'functions/meta-boxes.php' );
 include( OFFER_GENERATOR_PLUGIN_PATH . 'functions/display-offer.php' );
-include( OFFER_GENERATOR_PLUGIN_PATH . 'functions/shortcode.php' );
 
 
 // /**
