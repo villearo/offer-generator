@@ -48,7 +48,7 @@ function offers_setup_post_type() {
 		//'show_in_nav_menus' => true,
 		//'show_in_admin_bar' => true,
 		//'capability_type' => 'page',
-		//'supports' => array('title', 'excerpt', 'thumbnail', 'page-attributes'),
+		'supports' => array('title', 'editor', 'page-attributes'),
 		//'exclude_from_search' => true,
 		//'menu_position' => 20,
 		//'menu_icon' => 'dashicons-clipboard'

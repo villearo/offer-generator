@@ -33,7 +33,8 @@ function offer_generator_offer_meta_box_callback( $post ) {
     $args = array(
         'numberposts' => -1,
         'post_type'   => 'service',
-        'order'       => 'ASC'
+        'order'       => 'ASC',
+        'orderby'     => 'menu_order'
     );
     $available_services = get_posts( $args );
 
