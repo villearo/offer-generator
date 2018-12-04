@@ -55,7 +55,7 @@ function offer_generator_display_offer($post) {
             }
         }
         echo '<hr><strong>'.__('Non-recurring charges total:', 'offer-generator').'</strong> ';
-        echo '<strong class="total-price">'.$total_price.' € + alv.</strong>';
+        echo '<strong class="total-price">'.$total_price.' €</strong>';
         echo '</div>';
 
 
@@ -72,7 +72,7 @@ function offer_generator_display_offer($post) {
             }
         }
         echo '<hr><strong>'.__('Recurring charges total:', 'offer-generator').'</strong> ';
-        echo '<strong class="recurring-price">'.$recurring_price.' € + alv.</strong>';
+        echo '<strong class="recurring-price">'.$recurring_price.' €</strong>';
         echo '</div>';
 
         ?>
